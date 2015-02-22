@@ -23,7 +23,9 @@ Example
             _x = np.array(x)
             return sum(100.0 * (_x[1:] - _x[:-1] ** 2) ** 2. + (1 - _x[:-1]) ** 2.)
 
-        # setup the optimization
+        from de import DiffEvolOptimizer
+        
+        # setup the optimization 
         ngen, npop, ndim = 100, 100, 2
         limits = [[-5, 5]] * ndim
         de = DiffEvolOptimizer(rosenbrock_fn, limits, npop)
@@ -31,7 +33,7 @@ Example
         # store all the values during iterations for plotting.
         pop = np.zeros([ngen, npop, ndim])
         loc = np.zeros([ngen, ndim])
-        for i, res in Pbar(ngen).iterover(enumerate(de(ngen))):
+        for i, res in enumerate(de(ngen)):
             pop[i,:,:] = de.population.copy()
             loc[i,:] = de.location.copy()
 
