@@ -8,7 +8,7 @@ K., Journal of Global Optimization 11: 341--359, 1997, `DE original paper`_)
 **Main assuption**: the heuristic suppose a continuous parameter space.
 
 
-Full documentation at:
+Full documentation at: http://mfouesneau.github.io/docs/de/
 
 
 Example
